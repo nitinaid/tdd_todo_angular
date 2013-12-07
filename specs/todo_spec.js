@@ -12,15 +12,32 @@ describe('TodoController', function(){
 	})
 	
 	it('should have first element equal to เรียน Angular', function() {
-		expect($scope.todoList[0]).toEqual('เรียน Angular')
+		expect($scope.todoList[0].description).toEqual('เรียน Angular')
 	})
 	
 	it('should have first element equal to เรียน TDD', function() {
-		expect($scope.todoList[1]).toEqual('เรียน TDD')
+		expect($scope.todoList[1].description).toEqual('เรียน TDD')
 	})
 	
 	it('should have first element equal to กลับบ้าน', function() {
-		expect($scope.todoList[2]).toEqual('กลับบ้าน')
+		expect($scope.todoList[2].description).toEqual('กลับบ้าน')
+	})
+	
+	it('should able to add new todo', function() {
+		$scope.description = "new item"
+		$scope.addTodo($scope.description)
+		expect($scope.todoList[3].description).toEqual('new item')
+		expect($scope.description).toEqual('')
+	})
+	
+	it('should set default status of new item to false', function() {
+		$scope.description = "new item"
+		$scope.addTodo($scope.description)
+		expect($scope.todoList[3].status).toEqual(false)	
+	})
+	
+	it('should have status', function() {
+		expect($scope.todoList[0].status).not.toBeUndefined();
 	})
 		
 })
