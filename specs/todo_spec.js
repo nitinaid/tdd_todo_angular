@@ -15,11 +15,11 @@ describe('TodoController', function(){
 		expect($scope.todoList[0].description).toEqual('เรียน Angular')
 	})
 	
-	it('should have first element equal to เรียน TDD', function() {
+	it('should have second element equal to เรียน TDD', function() {
 		expect($scope.todoList[1].description).toEqual('เรียน TDD')
 	})
 	
-	it('should have first element equal to กลับบ้าน', function() {
+	it('should have third element equal to กลับบ้าน', function() {
 		expect($scope.todoList[2].description).toEqual('กลับบ้าน')
 	})
 	
